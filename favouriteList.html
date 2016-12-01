@@ -1,20 +1,29 @@
-
 <section id="patient" class="container">
-        <form class="form-inline well well-sm clearfix">
-            <img src="images/logo.png">
-            <button class="btn btn-success pull-right" ng-click="clearAll()">ClearList</button>
-        </form>
-    <fieldset>      
+    <fieldset>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline well well-sm clearfix">
+                    <img src="images/logo.png">
+                    <button class="btn btn-success pull-right" ng-click="clearAll()">ClearList</button>
+                </form>
+            </div>
+        </div>
+          
         <div class="row">
            <div class="col-sm-12" ng-repeat="movie in fvrtmovies">
                <div class="well well-sm">
                  <div class="row">
-                      <div class="col-md-12">
-                          <p><strong>Title:</strong> {{movie.Title}}</p>
-                          <p><strong>Title:</strong> {{movie.Year}}</p>
-                          <img ng-src="{{movie.Poster}}">
-                          <button class="btn btn-danger pull-right"><span ng-click="removeProduct($index)"><i class="fa fa-times" aria-hidden="true" style="color: red;"></i></span></button>
+                     <div class="col-md-4 col-sm-12 col-xs-12">
+                        <img ng-src="{{movie.Poster}}" class="img-responsive">
                      </div>
+                      <div class="col-md-6 col-sm-12 col-xs-12">
+                          <p><strong>Title:</strong> {{movie.Title}}</p>
+                          <p><strong>Year:</strong> {{movie.Year}}</p>
+                          <p><strong>Type:</strong> {{movie.Type}}</p>
+                          <p><strong>MovieID:</strong> {{movie.imdbID}}</p>
+                          <button class="btn btn-danger"><span ng-click="removeProduct($index)"><i class="fa fa-times" aria-hidden="true" style="color: red;"></i></span><strong>Delete</strong></button>
+                     </div>
+                     
                  </div>  
                </div>
             </div> 
