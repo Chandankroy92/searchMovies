@@ -6,8 +6,8 @@ app.config(function($routeProvider) {
         controller : "myCtrl"
     })
     .when( '/movie-list', {
-        templateUrl:"addMovie.html",
-         controller : "addMovieCtrl"
+        templateUrl:"favouriteList.html",
+         controller : "forouriteListCtrl"
     });
  });
 
