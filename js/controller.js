@@ -32,10 +32,20 @@ app.controller('myCtrl', function($scope, $http, $location, $localStorage){
 
 });
 
-app.controller('forouriteListCtrl',['$scope','$localStorage','$location', function($scope, $localStorage, $location){
+app.controller('forouriteListCtrl',['$scope','$localStorage','$location','$route', function($scope, $localStorage, $location, $route){
     
    
     $scope.fvrtmovies=$localStorage.farourite;
     console.log($scope.fvrtmovies);
+    
+    $scope.removeProduct = function(index){
+         $scope.fvrtmovies.splice(index,1);
+         
+     }
+    
+    $scope.clearAll = function(){
+       $localStorage.$reset();
+       $route.reload();
+   }
 }]);
 

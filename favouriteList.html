@@ -1,21 +1,26 @@
 
-        <section id="patient" class="container">
-            
-            <fieldset>
-                
-                <div class="row">
-       <div class="col-sm-12" ng-repeat="movie in fvrtmovies">
-           <div class="well well-sm">
-             <div class="row">
-                  <div class="col-md-12">
-                      <p><strong>Title:</strong> {{movie.Title}}</p>
-                      <p><strong>Title:</strong> {{movie.Year}}</p>
-                      <img ng-src="{{movie.Poster}}">
-                 </div>
-             </div>  
-           </div>
-        </div> 
-    </div>
+<section id="patient" class="container">
+        <form class="form-inline well well-sm clearfix">
+            <img src="images/logo.png">
+            <button class="btn btn-success pull-right" ng-click="clearAll()">ClearList</button>
+        </form>
+    <fieldset>      
+        <div class="row">
+           <div class="col-sm-12" ng-repeat="movie in fvrtmovies">
+               <div class="well well-sm">
+                 <div class="row">
+                      <div class="col-md-12">
+                          <p><strong>Title:</strong> {{movie.Title}}</p>
+                          <p><strong>Title:</strong> {{movie.Year}}</p>
+                          <img ng-src="{{movie.Poster}}">
+                          <button class="btn btn-danger pull-right"><span ng-click="removeProduct($index)"><i class="fa fa-times" aria-hidden="true" style="color: red;"></i></span></button>
+                     </div>
+                 </div>  
+               </div>
+            </div> 
+        </div>
+    </fieldset>
+</section>
                 
                 
                
