@@ -23,6 +23,7 @@ app.controller('myCtrl', function($scope, $http, $location, $localStorage){
     $scope.addMovies = function(movies) {
          $localStorage.farourite.push(movies);
         console.log($localStorage.farourite);
+        alert("Movie add to Favourite")
      }
  
     $scope.show = function() {
