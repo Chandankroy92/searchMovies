@@ -1,41 +1,40 @@
-app.controller('myCtrl', function($scope, $http,$location){
+
+app.controller('myCtrl', function($scope, $http, $location, $localStorage){
+
 
     $scope.title = "";
-    $scope.myWelcome = {};
+    $scope.myWelcome = [];
+    
+    $scope.init = function() {
+                if($localStorage.farourite == undefined) {
+                    $localStorage.farourite=[];
+                }
+            };
+        $scope.init();
+    
     
     $scope.search = function() {
-      $http.get('https://www.omdbapi.com/?t=' + $scope.title).then(function(response) {
+      $http.get('https://www.omdbapi.com/?s=' + $scope.title).then(function(response) {
         $scope.myWelcome = response.data;
       console.log(response.data);
         });
     }
     
-    $scope.addMovies = function() {
+    $scope.addMovies = function(movies) {
+         $localStorage.farourite.push(movies);
+        console.log($localStorage.farourite);
+     }
+ 
+    $scope.show = function() {
          $location.path('/movie-list');
      }
 
 });
 
-app.controller('addMovieCtrl',['$scope','$localStorage','$location', function($scope, $localStorage, $location){
+app.controller('forouriteListCtrl',['$scope','$localStorage','$location', function($scope, $localStorage, $location){
     
-    $scope.init = function() {
-                if($localStorage.PersonalStorage == undefined) {
-                    $localStorage.PersonalStorage = [];
-                }
-            };
-        $scope.init();
-    
-    $scope.save = function(mtitle,actor,director,year,dateRelease,desc) {
-            
-            var MovieInfo ={
-                Title : $scope.mtitle,
-                Actor : $scope.actor,
-                Director : $scope.director,
-                Year : $scope.year,
-                Release : $scope.dateRelease,
-                Description : $scope.desc, 
-            }
-            $localStorage.PersonalStorage.push(MovieInfo);
-            console.log($localStorage.PersonalStorage);
-        };
+   
+    $scope.fvrtmovies=$localStorage.farourite;
+    console.log($scope.fvrtmovies);
 }]);
+
