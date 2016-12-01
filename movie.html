@@ -19,10 +19,6 @@
                     <button class="btn btn-success pull-right" ng-click="show()">FavouriteList</button>
                 </div>
             </div>
-            
-            
-            
-            
         </form>
             </fieldset>
     </div>
@@ -37,13 +33,22 @@
                  <div class="col-md-8">
                       <p><strong>Title:</strong> {{movie.Title}}</p>
                       <p><strong>Year:</strong> {{movie.Year}}</p>
-                      <p><strong>Released:</strong> {{movie.Released}}</p>
-                      
-                      <button class="btn btn-success pull-right" ng-click="addMovies(movie)">AddFavourite</button>
+                      <p><strong>Type:</strong> {{movie.Type}}</p>
+                     <p><strong>MovieID:</strong> {{movie.imdbID}}</p>
+                      <button class="btn btn-success" ng-click="addMovies(movie)">Add To Favourite</button>
                  </div>
              </div>  
            </div>
         </div> 
+    </div>
+    <div class="col-sm-12" ng-repeat="(key,value) in myWelcome">
+        <div class="well well-sm">
+             <div class="row">
+                  <div class="col-md-12">
+                    <p><strong> {{key}} :</strong><span> {{value}} </span>{{value}}</p>
+                 </div>
+            </div>
+        </div>
     </div>
     
     
