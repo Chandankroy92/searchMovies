@@ -5,9 +5,9 @@ app.config(function($routeProvider) {
         templateUrl : "movie.html",
         controller : "myCtrl"
     })
-    .when( '/cart-list', {
-        templateUrl:"MovieList.html",
-         controller : "cartCtrl"
+    .when( '/movie-list', {
+        templateUrl:"addMovie.html",
+         controller : "addMovieCtrl"
     });
  });
 

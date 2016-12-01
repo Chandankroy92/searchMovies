@@ -1,4 +1,4 @@
-app.controller('myCtrl', function($scope, $http){
+app.controller('myCtrl', function($scope, $http,$location){
 
     $scope.title = "";
     $scope.myWelcome = {};
@@ -9,6 +9,33 @@ app.controller('myCtrl', function($scope, $http){
       console.log(response.data);
         });
     }
+    
+    $scope.addMovies = function() {
+         $location.path('/movie-list');
+     }
 
 });
 
+app.controller('addMovieCtrl',['$scope','$localStorage','$location', function($scope, $localStorage, $location){
+    
+    $scope.init = function() {
+                if($localStorage.PersonalStorage == undefined) {
+                    $localStorage.PersonalStorage = [];
+                }
+            };
+        $scope.init();
+    
+    $scope.save = function(mtitle,actor,director,year,dateRelease,desc) {
+            
+            var MovieInfo ={
+                Title : $scope.mtitle,
+                Actor : $scope.actor,
+                Director : $scope.director,
+                Year : $scope.year,
+                Release : $scope.dateRelease,
+                Description : $scope.desc, 
+            }
+            $localStorage.PersonalStorage.push(MovieInfo);
+            console.log($localStorage.PersonalStorage);
+        };
+}]);
