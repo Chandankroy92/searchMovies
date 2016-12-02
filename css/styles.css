@@ -38,3 +38,15 @@ ul li {
 .mini_input {
 width: 60px;
 }
+#page .bg-img {
+   background-image: url(../images/bg4.jpg);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#page .bg-img p{
+    color: #FFFFFF;
+}
+#page .well-lg .row .col-sm-12 {
+    padding-bottom: 4px;
+}
