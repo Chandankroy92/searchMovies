@@ -44,7 +44,13 @@ width: 60px;
     background-repeat: no-repeat;
     background-size: cover;
 }
-#page .bg-img p{
+#page .bg-img1 {
+   background-image: url(../images/bg1.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#page .bg-img1 p{
     color: #FFFFFF;
 }
 #page .well-lg .row .col-sm-12 {
